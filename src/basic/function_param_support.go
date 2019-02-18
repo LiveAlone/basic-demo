@@ -1,4 +1,4 @@
-package main
+package basic
 
 // 函数参数方式 可执行配置方式
 func main() {
