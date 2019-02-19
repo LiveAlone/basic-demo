@@ -5,12 +5,12 @@ import "fmt"
 // type 数据类型, error 错误异常断言方式
 func main() {
 
-	// i string 数据类型支持
+	// i local_string 数据类型支持
 	//var i interface{} = "hello world"
-	//s := i.(string)
+	//s := i.(local_string)
 	//fmt.Println(s)
 	//
-	//s, ok := i.(string)
+	//s, ok := i.(local_string)
 	//fmt.Println(s, ok)
 	//
 	//f, ok := i.(float64)
@@ -45,7 +45,7 @@ func do(i interface{}) {
 	case int:
 		fmt.Printf("int value type is %v \n", v)
 	case string:
-		fmt.Printf("string value is %v \n", v)
+		fmt.Printf("local_string value is %v \n", v)
 	default:
 		fmt.Printf("not known type content is %T \n", v)
 

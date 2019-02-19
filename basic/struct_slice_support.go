@@ -35,7 +35,7 @@ func main() {
 	//fmt.Println(v1, p, v2, v3)
 
 	// 数组支持方式
-	//var a [2]string
+	//var a [2]local_string
 	//a[0] = "Hello"
 	//a[1] = "World"
 	//fmt.Println(a[0], a[1])
@@ -50,7 +50,7 @@ func main() {
 	//fmt.Println(s)
 
 	// 数组切片 底层共享
-	//names := [4]string{
+	//names := [4]local_string{
 	//	"John",
 	//	"Paul",
 	//	"George",
@@ -110,10 +110,10 @@ func main() {
 	//printSlice(d)
 
 	// 二维数据切片支持
-	//board := [][]string{
-	//	[]string{"_", "_", "_"},
-	//	[]string{"_", "_", "_"},
-	//	[]string{"_", "_", "_"},
+	//board := [][]local_string{
+	//	[]local_string{"_", "_", "_"},
+	//	[]local_string{"_", "_", "_"},
+	//	[]local_string{"_", "_", "_"},
 	//}
 	//// The players take turns.
 	//board[0][0] = "X"
@@ -158,9 +158,9 @@ func main() {
 	//}
 
 	// map 数据映射结构
-	////var m map[string]Vertex // current map is nil， 需要通过 make 初始化内存
+	////var m map[local_string]Vertex // current map is nil， 需要通过 make 初始化内存
 	////fmt.Println(m == nil)
-	//m := make(map[string]Vertex)
+	//m := make(map[local_string]Vertex)
 	//fmt.Println(m == nil)
 	//fmt.Println(m)
 	//fmt.Println("len map is ", len(m))
@@ -170,18 +170,18 @@ func main() {
 	//fmt.Println(m)
 
 	// map 初始化方式 可折叠方式， 对于 struct 相同的数据类型支持
-	//m := map[string]Vertex{
+	//m := map[local_string]Vertex{
 	//	"yao": Vertex{1,2},
 	//	"qi": Vertex{2, 3},
 	//}
-	//m := map[string]Vertex{
+	//m := map[local_string]Vertex{
 	//	"yao":{1, 2},
 	//	"qi":{2,3},
 	//}
 	//fmt.Println(m)
 
 	// 获取元素方式， 判断元素存在方式
-	//m := make(map[string]int)
+	//m := make(map[local_string]int)
 	//m["Answer"] = 42
 	//fmt.Println("The value:", m["Answer"])
 	//m["Answer"] = 48

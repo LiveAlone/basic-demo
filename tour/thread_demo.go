@@ -39,7 +39,7 @@ func (c *SafeCounter) Value(key string) int {
 
 func main() {
 
-	//c := SafeCounter{v: make(map[string]int)}
+	//c := SafeCounter{v: make(map[local_string]int)}
 	//for i := 0; i < 1000; i++ {
 	//	go c.Inc("somekey")
 	//}

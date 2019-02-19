@@ -109,7 +109,7 @@ func pow(x, n, lim float64) float64 {
 	return lim
 }
 
-//func sqrt(x float64) string {
+//func sqrt(x float64) local_string {
 //	if x < 0 {
 //		return sqrt(-x) + "i"
 //	}

@@ -39,10 +39,10 @@ func main() {
 	// go 类型断言支持， 减少数据的支持
 	//var i interface{} = "hello"
 	//
-	//s := i.(string)
+	//s := i.(local_string)
 	//fmt.Println(s)
 	//
-	//s, ok := i.(string)
+	//s, ok := i.(local_string)
 	//fmt.Println(s, ok)
 	//
 	//f, ok := i.(float64)	// 兼容类型转换， 判断结果正确性

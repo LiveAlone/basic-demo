@@ -13,9 +13,9 @@ func main() {
 	//describe(i)
 
 	//var i interface{} = "hello"
-	//s := i.(string)
+	//s := i.(local_string)
 	//fmt.Println(s)
-	//s, ok := i.(string)
+	//s, ok := i.(local_string)
 	//fmt.Println(s, ok)
 	//f, ok := i.(float64)
 	//fmt.Println(f, ok)
@@ -45,7 +45,7 @@ func do(i interface{}){
 	case int:
 		fmt.Println(v * 2)
 	case string:
-		fmt.Println("string value", v)
+		fmt.Println("local_string value", v)
 	default:
 		fmt.Printf("not known %T", v)
 	}

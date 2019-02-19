@@ -35,10 +35,10 @@ func main() {
 	//printSlice(s)
 
 	//// 创建一个井字板（经典游戏）
-	//board := [][]string{
-	//	[]string{"_", "_", "_"},
-	//	[]string{"_", "_", "_"},
-	//	[]string{"_", "_", "_"},
+	//board := [][]local_string{
+	//	[]local_string{"_", "_", "_"},
+	//	[]local_string{"_", "_", "_"},
+	//	[]local_string{"_", "_", "_"},
 	//}
 	//
 	//// 两个玩家轮流打上 X 和 O
@@ -92,7 +92,7 @@ func main() {
 	//fmt.Println(s)
 
 	// 数组相关操作
-	//var a [2]string
+	//var a [2]local_string
 	//a[0] = "hello"
 	//a[1] = "world"
 	//fmt.Println(a)
@@ -108,7 +108,7 @@ func main() {
 	//s[1] = 6666
 	//fmt.Println(primes)	// 切片公用一个数组
 
-	//names := [4]string{
+	//names := [4]local_string{
 	//	"John",
 	//	"Paul",
 	//	"George",
@@ -147,7 +147,7 @@ func printSlice(s []int) {
 	fmt.Printf("len=%d cap=%d %v\n", len(s), cap(s), s)
 }
 
-//func printSlice(s string, x []int) {
+//func printSlice(s local_string, x []int) {
 //	fmt.Printf("%s len=%d cap=%d %v\n",
 //		s, len(x), cap(x), x)
 //}

@@ -48,7 +48,7 @@ func main(){
 	//var i int
 	//var f float64
 	//var b bool
-	//var s string
+	//var s local_string
 	//fmt.Printf("%v %v %v %q\n", i, f, b, s)
 
 	// 通过 T(v) 方式数据转换

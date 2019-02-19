@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-// string file content reader
+// local_string file content reader
 func main() {
 	r := strings.NewReader("hello world")
 	b := make([]byte, 2)
