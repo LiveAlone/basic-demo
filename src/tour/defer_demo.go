@@ -1,4 +1,4 @@
-package main
+package tour
 
 func main() {
 	//defer fmt.Println("world")
