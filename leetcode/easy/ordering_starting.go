@@ -34,7 +34,90 @@ func main() {
 	//	head = head.Next
 	//}
 
-	fmt.Println(generateParenthesis(4))
+	//fmt.Println(generateParenthesis(4))
+	//arr := []int{5,4,7,5,3,2}
+	//nextPermutation(arr)
+	//fmt.Println(arr)
+
+	fmt.Println(search([]int{9,0,2,7,8}, 3))
+}
+
+func search(nums []int, target int) int {
+	nums_length := len(nums)
+	if nums_length == 0 {
+		return -1
+	}
+	low := 0
+	high := nums_length - 1
+	for low < nums_length && high < nums_length && low >= 0 && high >= 0 && high >= low{
+		mid := (low + high) / 2
+		if nums[mid] == target {
+			return mid
+		}
+		if low == high {
+			 break
+		}
+		if target > nums[mid]{
+			if target >= nums[low] && nums[low] > nums[mid]{
+				high = mid - 1
+			}else {
+				low = mid + 1
+			}
+		}else {
+			if target <= nums[high] && nums[mid] > nums[high] {
+				low = mid + 1
+			}else {
+				high = mid - 1
+			}
+		}
+	}
+	return -1
+}
+
+func nextPermutation(nums []int)  {
+	length_size := len(nums)
+	if length_size == 0 || length_size == 1 {
+		return
+	}
+	pos := length_size - 2
+	for pos >= 0 {
+		if nums[pos] < nums[pos+1] {
+			break
+		}
+		pos--
+	}
+
+	if pos != -1 {
+		k:= pos + 1
+		for k < length_size {
+			if nums[k] <= nums[pos] {
+				break
+			}
+			k++
+		}
+		nums[pos], nums[k-1] = nums[k-1], nums[pos]
+	}
+	for i:=pos+1; i<=(length_size + pos)/2; i++ {
+		nums[i], nums[length_size + pos - i] = nums[length_size + pos - i], nums[i]
+	}
+}
+
+func myPow(x float64, n int) float64 {
+	return math.Pow(x, float64(n))
+}
+
+func swapPairs(head *ListNode) *ListNode {
+	curr := head
+	for curr!=nil {
+		if curr.Next == nil {
+			break
+		}
+		temp := curr.Val
+		curr.Val = curr.Next.Val
+		curr.Next.Val = temp
+		curr = curr.Next.Next
+	}
+	return head
 }
 
 var cache_string_board [][]string
