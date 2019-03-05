@@ -39,7 +39,48 @@ func main() {
 	//nextPermutation(arr)
 	//fmt.Println(arr)
 
-	fmt.Println(search([]int{9,0,2,7,8}, 3))
+	//fmt.Println(search([]int{9,0,2,7,8}, 3))
+
+	fmt.Println(searchRange([]int{5,7,7,8,8,10}, 8))
+}
+
+func searchRange(nums []int, target int) []int {
+	result := []int{-1, -1}
+	low := 0
+	high := len(nums) - 1
+	for low <= high{
+		mid := (low + high) / 2
+		if nums[mid] == target {
+			if mid == 0 || nums[mid-1]<target {
+				result[0] = mid
+				break
+			}
+			high = mid - 1
+		}else if nums[mid] > target {
+			high = mid - 1
+		}else{
+			low = mid + 1
+		}
+	}
+
+	low = 0
+	high = len(nums) - 1
+	for low <= high{
+		mid := (low + high) / 2
+		if nums[mid] == target {
+			if mid == (len(nums) - 1) || nums[mid+1]>target {
+				result[1] = mid
+				break
+			}
+			low = mid + 1
+		}else if nums[mid] > target {
+			high = mid - 1
+		}else{
+			low = mid + 1
+		}
+	}
+
+	return result
 }
 
 func search(nums []int, target int) int {
