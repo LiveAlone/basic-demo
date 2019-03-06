@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"math"
 	"sort"
+	"strconv"
 )
 
 func main() {
@@ -41,7 +42,78 @@ func main() {
 
 	//fmt.Println(search([]int{9,0,2,7,8}, 3))
 
-	fmt.Println(searchRange([]int{5,7,7,8,8,10}, 8))
+	//fmt.Println(searchRange([]int{5,7,7,8,8,10}, 8))
+
+	//fmt.Println(isValidSudoku([][]byte{
+	//	{'8','3','.', '.','7','.', '.','.','.'},
+	//	{'6','.','.', '1','9','5', '.','.','.'},
+	//	{'.','9','8', '.','.','.', '.','6','.'},
+	//
+	//	{'8','.','.', '.','6','.', '.','.','3'},
+	//	{'4','.','.', '8','.','3', '.','.','1'},
+	//	{'7','.','.', '.','2','.', '.','.','6'},
+	//
+	//	{'.','6','.', '.','.','.', '2','8','.'},
+	//	{'.','.','.', '4','1','9', '.','.','5'},
+	//	{'.','.','.', '.','8','.', '.','7','9'},}))
+
+	//fmt.Println(countAndSay(6))
+
+
+	result := combinationSum([]int{2,3,6,7}, 7)
+	for _, val := range result{
+		fmt.Println(val)
+	}
+}
+
+func combinationSum(candidates []int, target int) [][]int {
+	return nil
+}
+
+func countAndSay(n int) string {
+	result := "1"
+
+	for i:=1; i<n; i++ {
+		var current string
+		length := len(result)
+		var curr_char uint8 = 'X'
+		curr_count := 0
+		for index:=0; index<length; index++ {
+			if curr_char != result[index] {
+				if curr_count != 0{
+					current += strconv.Itoa(curr_count) + string(curr_char)
+				}
+				curr_char = result[index]
+				curr_count = 1
+			}else {
+				curr_count += 1
+			}
+		}
+		if curr_count != 0{
+			current += strconv.Itoa(curr_count) + string(curr_char)
+		}
+		result = current
+	}
+	return result
+}
+
+func isValidSudoku(board [][]byte) bool {
+	tagBoard := make([]int, 27)
+	for rowIndex, row := range board{
+		for columnIndex, cell := range row {
+			if cell != '.' {
+				tagVal := 1 << (cell - '1')
+				blockIndex := 3 * (rowIndex/ 3) + columnIndex/ 3
+				if tagBoard[rowIndex] &tagVal == tagVal || tagBoard[9 +columnIndex] & tagVal == tagVal || tagBoard[18 +blockIndex] & tagVal == tagVal{
+					return false
+				}
+				tagBoard[rowIndex] |= tagVal
+				tagBoard[9 +columnIndex] |= tagVal
+				tagBoard[18 +blockIndex] |= tagVal
+			}
+		}
+	}
+	return true
 }
 
 func searchRange(nums []int, target int) []int {
