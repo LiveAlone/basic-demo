@@ -3,6 +3,7 @@ package basic
 import (
 	"fmt"
 	"math"
+	"time"
 )
 
 // 运算执行流程方式
@@ -58,17 +59,18 @@ func main() {
 
 	// switch case i 可以指定方法， 判断方法执行
 	//fmt.Println("When's Saturday?")
-	//today := time.Now().Weekday()
-	//switch time.Saturday {
-	//case today + 0:
-	//	fmt.Println("Today.")
-	//case today + 1:
-	//	fmt.Println("Tomorrow.")
-	//case today + 2:
-	//	fmt.Println("In two days.")
-	//default:
-	//	fmt.Println("Too far away.")
-	//}
+	today := time.Now().Weekday()
+	fmt.Println(today)
+	switch time.Saturday {
+	case today + 0:
+		fmt.Println("Today.")
+	case today + 1:
+		fmt.Println("Tomorrow.")
+	case today + 2:
+		fmt.Println("In two days.")
+	default:
+		fmt.Println("Too far away.")
+	}
 
 	// switch 支持没有条件的判断方式, t.Hour() 最多两次掉用方式
 	//t := time.Now()
