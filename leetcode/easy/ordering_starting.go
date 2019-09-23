@@ -1,16 +1,24 @@
 package main
 
-func main() {
-}
-
-func generateTrees(n int) []*TreeNode {
-	return nil
-}
-
 type TreeNode struct {
 	Val int
 	Left *TreeNode
 	Right *TreeNode
+}
+
+func main() {
+}
+
+func maxDepth(root *TreeNode) int {
+	if root == nil {
+		return 0
+	}
+	left := maxDepth(root.Left)
+	right := maxDepth(root.Right)
+	if left > right {
+		return left + 1
+	}
+	return right + 1
 }
 
 
